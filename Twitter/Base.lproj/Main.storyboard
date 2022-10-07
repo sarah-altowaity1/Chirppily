@@ -32,7 +32,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tweet content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n64-FD-h0S">
-                                            <rect key="frame" x="99" y="46" width="286" height="67"/>
+                                            <rect key="frame" x="99" y="46" width="269" height="53"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -102,21 +102,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mUu-6d-W7r">
-                                <rect key="frame" x="0.0" y="91" width="375" height="128"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="itB-No-kbq">
+                                <rect key="frame" x="16" y="106" width="337" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0o5-zs-kdV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="0o5-zs-kdV" firstAttribute="trailing" secondItem="mUu-6d-W7r" secondAttribute="trailing" id="818-r6-IVl"/>
-                            <constraint firstItem="mUu-6d-W7r" firstAttribute="leading" secondItem="0o5-zs-kdV" secondAttribute="leading" id="9rq-8k-nGR"/>
-                            <constraint firstItem="mUu-6d-W7r" firstAttribute="top" secondItem="0o5-zs-kdV" secondAttribute="top" id="OoL-Y3-IIe"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Lzw-rK-zcQ">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="sXs-6k-iFF">
@@ -133,7 +127,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tweetTextView" destination="mUu-6d-W7r" id="aY3-NO-piS"/>
+                        <outlet property="tweetTextField" destination="itB-No-kbq" id="alx-hM-50V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U6F-uw-to3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -229,9 +223,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -5,12 +5,12 @@
 //  Created by Sarah Al-Towaity on 04/10/2022.
 //  Copyright © 2022 Dan. All rights reserved.
 //
-
 import UIKit
 
 class TweetViewController: UIViewController {
-    @IBOutlet weak var tweetTextView: UITextView!
 
+
+    @IBOutlet weak var tweetTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,8 +22,9 @@ class TweetViewController: UIViewController {
     }
     
     @IBAction func tweet(_ sender: Any) {
-        if (!tweetTextView.text.isEmpty){
-            TwitterAPICaller.client?.postTweet(tweetString: tweetTextView.text, success: {
+        let text = tweetTextField.text
+        if (!text!.isEmpty){
+            TwitterAPICaller.client?.postTweet(tweetString: text!, success: {
                 self.dismiss(animated: true, completion: nil)
             }, failure: { (error) in
                 print("Error posting tweet \(error)")
@@ -35,11 +36,10 @@ class TweetViewController: UIViewController {
         }
     }
     
-    
+    @IBOutlet weak var tweetTextView: UITextView!
  
     /*
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
